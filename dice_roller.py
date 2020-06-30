@@ -1,4 +1,6 @@
 import random
+team_name=input('What is your teams name?:')
+print('Welcome,',team_name)
 dice_rolls=int(input('How many dice would you like to roll? '))
 dice_size = int(input('How many sides are the dice? '))
 dice_sum = 0
@@ -14,6 +16,17 @@ for i in range(0,dice_rolls):
 
     
 print(f'You have rolled a total sum of {dice_sum}')
+
+f = open("team_name.txt","a")
+teamName=team_name
+Total=dice_sum
+for line in team_name:
+  # write line to output file
+  f.write(line)
+  f.write("\n")
+f.close()
+print("Team",teamName,"has a total sum of",Total)
+
 
 # if __name__== "__main__":
 #   main()
